@@ -66,20 +66,20 @@ The *using static* enhancement enables you to import the static methods of a sin
 
 [!code-csharp[UsingStaticMath](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStaticMath)]
 
-The <xref:System.Math> does not contain any instance methods. You can also use `using static` to import a class' static methods for a class that has both static and instance methods. One of the most useful examples is <xref:System.String>:
+The <xref:System.Math> does not contain any instance methods. You can also use `using static` to import a class's static methods for a class that has both static and instance methods. One of the most useful examples is <xref:System.String>:
 
 [!code-csharp[UsingStatic](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStatic)]
 
 > [!NOTE]
-> You must use the fully qualified class name, `System.String`  in a static using statement.  You cannot use the `string` keyword instead.
+> You must use the fully-qualified class name, `System.String` in a `using static` statement.  You cannot use the `string` keyword instead.
 
-When imported from a `static using` statement, extension methods are only in scope when called using the extension method invocation syntax. They aren't in scope when called as a static method. You'll often see this in LINQ queries. You can import the LINQ pattern by importing <xref:System.Linq.Enumerable>, or <xref:System.Linq.Queryable>.
+When imported from a `using static` statement, extension methods are only in scope when called using the extension method invocation syntax. They aren't in scope when called as a static method. You'll often see this in LINQ queries. You can import the LINQ pattern by importing <xref:System.Linq.Enumerable>, or <xref:System.Linq.Queryable>.
 
 [!code-csharp[UsingStaticLinq](../../../samples/snippets/csharp/new-in-6/newcode.cs#usingStaticLinq)]
 
 You typically call extension methods using extension method invocation expressions. Adding the class name in the rare case where you call them using static method call syntax resolves ambiguity.
 
-The `static using` directive also imports any nested types. You can reference any nested types without qualification.
+The `using static` directive also imports any nested types. You can reference any nested types without qualification.
 
 ## Null-conditional operators
 
